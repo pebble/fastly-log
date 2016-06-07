@@ -17,7 +17,7 @@ RUN /opt/td-agent/embedded/bin/fluent-gem install --no-ri --no-rdoc \
 # Recommended for better memory management
 ENV LD_PRELOAD /opt/td-agent/embedded/lib/libjemalloc.so
 
-EXPOSE 514
+EXPOSE 24224
 USER td-agent
 
 # --use-v1-config allows use of "#{ENV['SOMENAME']}" syntax
