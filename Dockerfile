@@ -10,6 +10,10 @@ RUN apt-get install -y --force-yes adduser td-agent
 
 ADD td-agent.conf /etc/td-agent/td-agent.conf
 
+# install fluentd plugins
+RUN /opt/td-agent/embedded/bin/fluent-gem install --no-ri --no-rdoc \
+    fastly_fluent
+
 # Recommended for better memory management
 ENV LD_PRELOAD /opt/td-agent/embedded/lib/libjemalloc.so
 
